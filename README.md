@@ -37,20 +37,11 @@ I enjoy turning creative ideas into interactive experiences on the web.
 
 ---
 
-## 🧩 Project Structure
-
----
-
-## 🖥️ Live Demo
-
-🔗 [View Portfolio Online](https://your-portfolio-demo-link.com)  
-_(Replace with your deployed link — e.g., Vercel, Netlify, or GitHub Pages)_
-
----
-
 ## 📫 Contact
 
 - 🌐 Website: [your-portfolio-link.com](https://your-portfolio-link.com)
+- 📧 Email: sobhanasadi703@gmail.com
+- 💬 Telegram: https://t.me/SobhanAsadi
 
 ---
 
