@@ -4,11 +4,11 @@ import { NavLink } from "react-router-dom";
 import { cn } from "../lib/utils";
 
 const navItems = [
-  { id: 1, name: "Home", href: "#Home" },
-  { id: 2, name: "About", href: "#About" },
-  { id: 3, name: "Skills", href: "#Skills" },
-  { id: 4, name: "Projects", href: "#Projects" },
-  { id: 5, name: "Conta", href: "#Conta" },
+  { id: 1, name: "Home", href: "home" },
+  { id: 2, name: "About", href: "about" },
+  { id: 3, name: "Skills", href: "skills" },
+  { id: 4, name: "Projects", href: "projects" },
+  { id: 5, name: "Conta", href: "conta" },
 ];
 
 export default function Navbar() {
