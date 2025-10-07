@@ -1,13 +1,17 @@
 import AboutMe from "../components/AboutMe";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
+import ProjectsSection from "../components/ProjectsSection";
 import SkillsSection from "../components/SkillsSection";
 import StarBackground from "../components/StarBackground";
 import ThemeToggl from "../components/ThemeToggl";
 
 function Home() {
   return (
-    <div className="bg-background text-foreground min-h-screen overflow-x-hidden">
+    <div
+      id="home"
+      className="bg-background text-foreground min-h-screen overflow-x-hidden"
+    >
       {/* Theme Toggl */}
       <ThemeToggl />
       {/* Background Effects */}
@@ -19,6 +23,7 @@ function Home() {
         <HeroSection />
         <AboutMe />
         <SkillsSection />
+        <ProjectsSection />
       </main>
     </div>
   );

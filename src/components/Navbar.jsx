@@ -1,14 +1,13 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { cn } from "../lib/utils";
 
 const navItems = [
-  { id: 1, name: "Home", href: "home" },
-  { id: 2, name: "About", href: "about" },
-  { id: 3, name: "Skills", href: "skills" },
-  { id: 4, name: "Projects", href: "projects" },
-  { id: 5, name: "Conta", href: "conta" },
+  { id: 1, name: "Home", href: "#home" },
+  { id: 2, name: "About", href: "#about" },
+  { id: 3, name: "Skills", href: "#skills" },
+  { id: 4, name: "Projects", href: "#projects" },
+  { id: 5, name: "Conta", href: "#conta" },
 ];
 
 export default function Navbar() {
@@ -27,9 +26,9 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed z-40 w-full items-center transition-all duration-300",
+        "bg-background/80 fixed z-40 w-full items-center transition-all duration-300",
         isScrolled
-          ? "bg-background/80 py-3 shadow-md backdrop-blur-md"
+          ? "bg-background/80 py-3 text-2xl shadow-md backdrop-blur-md"
           : "py-5 md:py-6",
       )}
     >
@@ -47,13 +46,13 @@ export default function Navbar() {
         {/* desktop nav */}
         <div className="hidden space-x-8 md:flex md:px-9">
           {navItems.map((item) => (
-            <NavLink
-              to={item.href}
+            <a
+              href={item.href}
               key={item.id}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
-            </NavLink>
+            </a>
           ))}
         </div>
         {/* mobile nav */}
@@ -77,14 +76,14 @@ export default function Navbar() {
         >
           <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((item) => (
-              <NavLink
+              <a
                 onClick={() => setIsMenuOpen(false)}
                 to={item.href}
                 key={item.id}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
               >
                 {item.name}
-              </NavLink>
+              </a>
             ))}
           </div>
         </div>
