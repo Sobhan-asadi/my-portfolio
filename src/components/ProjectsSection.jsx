@@ -3,30 +3,12 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Saas Landing Page",
-    description: "A beautiful landing page app",
-    image: "/projects/logo.png",
-    tags: ["React", "TailwindCSS", "Reducx"],
-    demoUrl: "#",
-    githugbUrl: "#",
-  },
-  {
-    id: 2,
-    title: "Saas Landing Page",
-    description: "A beautiful landing page app",
-    image: "/projects/logo.png",
-    tags: ["React", "TailwindCSS", "Reducx"],
-    demoUrl: "#",
-    githugbUrl: "#",
-  },
-  {
-    id: 3,
-    title: "Saas Landing Page",
-    description: "A beautiful landing page app",
-    image: "/projects/logo.png",
-    tags: ["React", "TailwindCSS", "Reducx"],
-    demoUrl: "#",
-    githugbUrl: "#",
+    title: "Nexa Store",
+    description: "Modern and responsive design",
+    image: "/projects/nex-astore.png",
+    tags: ["React", "TailwindCSS", "Redux Toolkit", "React Router"],
+    demoUrl: "https://nex-astore.netlify.app/",
+    githugbUrl: "https://github.com/Sobhan-asadi/nexaStore",
   },
 ];
 
@@ -53,7 +35,7 @@ export default function ProjectsSection() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 

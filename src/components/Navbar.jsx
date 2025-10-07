@@ -7,7 +7,7 @@ const navItems = [
   { id: 2, name: "About", href: "#about" },
   { id: 3, name: "Skills", href: "#skills" },
   { id: 4, name: "Projects", href: "#projects" },
-  { id: 5, name: "Conta", href: "#conta" },
+  { id: 5, name: "Conta", href: "#contact" },
 ];
 
 export default function Navbar() {
