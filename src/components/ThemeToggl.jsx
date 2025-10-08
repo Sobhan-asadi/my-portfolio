@@ -3,34 +3,25 @@ import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 
 function ThemeToggl() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") === "dark";
+    }
+    return false;
+  });
 
   useEffect(() => {
-    const themeItem = localStorage.getItem("theme");
-
-    if (themeItem === "dark") {
+    if (isDarkMode) {
       document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
+      localStorage.setItem("theme", "dark");
     } else {
-      localStorage.setItem("theme", "light");
-
       document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
+      localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
 
   function toggleTheme() {
-    if (isDarkMode) {
-      localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-
-      setIsDarkMode(false);
-    } else {
-      localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-
-      setIsDarkMode(true);
-    }
+    setIsDarkMode(!isDarkMode);
   }
 
   return (
