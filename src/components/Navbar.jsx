@@ -60,11 +60,11 @@ export default function Navbar() {
         {/* mobile nav */}
 
         <button
-          className="text-foreground z-50 p-2 md:hidden"
+          className="text-foreground z-50 mr-4 p-2 md:hidden"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
 
         <div
