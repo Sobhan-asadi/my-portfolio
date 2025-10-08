@@ -6,13 +6,14 @@ function ThemeToggl() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
+    localStorage.setItem("theme", "dark");
     const themeItem = localStorage.getItem("theme");
 
     if (themeItem === "dark") {
       document.documentElement.classList.add("dark");
       setIsDarkMode(true);
     } else {
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem("theme", "light");
 
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
