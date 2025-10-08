@@ -37,8 +37,10 @@ export default function Navbar() {
           href="#hero"
           className="text-primary flex items-center text-xl font-bold"
         >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground">SOBHAN-</span>
+          <span className="relative z-10 text-sm md:text-base">
+            <span className="text-glow text-foreground text-sm md:text-base">
+              SOBHAN-
+            </span>
             Portfolio
           </span>
         </a>

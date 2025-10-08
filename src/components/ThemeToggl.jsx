@@ -37,7 +37,7 @@ function ThemeToggl() {
   return (
     <button
       className={cn(
-        "fixed top-5 right-5 z-50 cursor-pointer rounded-full p-2 transition-colors duration-300 max-sm:hidden",
+        "fixed top-5 right-1 z-50 cursor-pointer rounded-full p-2 transition-colors duration-300 md:right-5",
         "focus:outline-hidden",
       )}
       onClick={toggleTheme}

@@ -1,5 +1,4 @@
 import { Briefcase, Code, User } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function AboutMe() {
   return (
@@ -26,9 +25,13 @@ export default function AboutMe() {
             </p>
 
             <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
-              <Link to="contact" className="cosmic-button">
+              <a
+                href="https://github.com/Sobhan-asadi"
+                target="_blank"
+                className="cosmic-button"
+              >
                 Get In touch
-              </Link>
+              </a>
             </div>
           </div>
 
