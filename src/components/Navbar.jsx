@@ -78,7 +78,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <a
                 onClick={() => setIsMenuOpen(false)}
-                to={item.href}
+                href={item.href}
                 key={item.id}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
               >
