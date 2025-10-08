@@ -17,7 +17,7 @@ function ThemeToggl() {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
     }
-  }, []);
+  }, [isDarkMode]);
 
   function toggleTheme() {
     if (isDarkMode) {
