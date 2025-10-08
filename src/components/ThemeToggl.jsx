@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 
 function ThemeToggl() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const themeItem = localStorage.getItem("theme");
