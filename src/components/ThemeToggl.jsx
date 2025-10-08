@@ -12,7 +12,7 @@ function ThemeToggl() {
       document.documentElement.classList.add("dark");
       setIsDarkMode(true);
     } else {
-      localStorage.setItem("theme", "light");
+      localStorage.setItem("theme", "dark");
 
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
