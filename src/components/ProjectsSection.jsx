@@ -10,6 +10,16 @@ const projects = [
     demoUrl: "https://nex-astore.netlify.app/",
     githugbUrl: "https://github.com/Sobhan-asadi/nexaStore",
   },
+
+  {
+    id: 2,
+    title: "Hotel Booking",
+    description: "Modern and responsive design",
+    image: "/projects/hotel.png",
+    tags: ["React", "TailwindCSS", "Redux Toolkit", "React Router"],
+    demoUrl: "https://hootelbook.netlify.app/",
+    githubUrl: "https://github.com/Sobhan-asadi/-Hotel-Booking",
+  },
 ];
 
 export default function ProjectsSection() {
