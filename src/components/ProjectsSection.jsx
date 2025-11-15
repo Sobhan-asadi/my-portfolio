@@ -20,6 +20,24 @@ const projects = [
     demoUrl: "https://hootelbook.netlify.app/",
     githubUrl: "https://github.com/Sobhan-asadi/-Hotel-Booking",
   },
+
+  {
+    id: 3,
+    title: "SkillMaine – Online Learning Platform",
+    description:
+      "An advanced and modern LMS platform featuring course browsing, instructor pages, category filtering, responsive UI, and a smooth user experience.",
+    image: "/projects/skillmaine.png",
+    tags: [
+      "React",
+      "TailwindCSS",
+      "Redux Toolkit",
+      "React Router",
+      "Swiper",
+      "Framer Motion",
+    ],
+    demoUrl: "https://skillmaine.netlify.app/",
+    githubUrl: "https://github.com/Sobhan-asadi/skillmaine",
+  },
 ];
 
 export default function ProjectsSection() {
