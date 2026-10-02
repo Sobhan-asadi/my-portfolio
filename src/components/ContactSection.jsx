@@ -1,166 +1,147 @@
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  Phone,
-  Send,
-  Twitch,
-  Twitter,
-} from "lucide-react";
-import { cn } from "../lib/utils";
+import { ArrowUpRight, Github, Mail, MessageCircle, Phone } from "lucide-react";
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: "sobhanasadi703@gmail.com",
+    href: "mailto:sobhanasadi703@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "Phone",
+    value: "+98 936 257 2474",
+    href: "tel:+989362572474",
+    icon: Phone,
+  },
+  {
+    label: "Telegram",
+    value: "@SobhanAsadi",
+    href: "https://t.me/SobhanAsadi",
+    icon: MessageCircle,
+  },
+  {
+    label: "GitHub",
+    value: "Sobhan-asadi",
+    href: "https://github.com/Sobhan-asadi",
+    icon: Github,
+  },
+];
 
 export default function ContactSection() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    alert("Please send your message to the Telegram ID or email.");
-  }
-
   return (
-    <section id="contact" className="bg-secondary/30 relative px-4 py-24">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
-          Get In<span className="text-primary"> Touch</span>
-        </h2>
+    <section
+      id="contact"
+      className="relative overflow-hidden px-4 pt-20 pb-8 sm:px-6 sm:pt-24 lg:px-8 lg:pt-28"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[-20%] left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-violet-500/[0.065] blur-[160px]"
+      />
 
-        <p className="text-muted-foreground mx-auto mb-12 max-w-2xl text-center">
-          Have a project in mind or want to collaborate? feel free to reach out.
-          I'm always open to discussing new opprtunities.
-        </p>
+      <div className="relative mx-auto max-w-[1440px]">
+        {/* Section label */}
+        <div className="border-t border-white/[0.08] pt-7">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-semibold tracking-[0.18em] text-violet-400 uppercase">
+              04 / Contact
+            </span>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-          <div className="space-y-8">
-            <h3 className="mb-6 text-2xl font-semibold">Contact Information</h3>
-
-            <div className="justify-center space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 rounded-full p-3">
-                  <Mail className="text-primary h-6 w-6" />
-                </div>
-                <div className="">
-                  <h4>Email</h4>
-                  <a
-                    href="mailto:sobhanasadi703@gmail.com"
-                    className="text-muted-foregonud hover:text-primary transition-colors"
-                  >
-                    sobhanasadi703@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 rounded-full p-3">
-                  <Phone className="text-primary h-6 w-6" />
-                </div>
-                <div className="">
-                  <h4>Phone</h4>
-                  <a
-                    href="tel:+98 936 257 2474"
-                    className="text-muted-foregonud hover:text-primary transition-colors"
-                  >
-                    +98 936 257 2474
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-primary/10 rounded-full p-3">
-                  <Mail className="text-primary h-6 w-6" />
-                </div>
-                <div className="">
-                  <h4>Telegram</h4>
-                  <a
-                    href="https://t.me/SobhanAsadi"
-                    className="text-muted-foregonud hover:text-primary transition-colors"
-                  >
-                    https://t.me/SobhanAsadi
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-8">
-              <h4 className="mb-4 font-medium">Connect With Me</h4>
-              <div className="flex justify-center space-x-4">
-                <a href="#" target="_blank" className="">
-                  <Linkedin />
-                </a>
-                <a href="#" target="_blank" className="">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank" className="">
-                  <Instagram />
-                </a>
-                <a href="#" target="_blank" className="">
-                  <Twitch />
-                </a>
-              </div>
-            </div>
+            <span className="h-px w-14 bg-violet-400/40" />
           </div>
+        </div>
 
-          <div className="bg-card rounded-lg p-8 shadow-xs">
-            <h3 className="mb-3.5">Send a Message</h3>
-            <form action="#" className="space-y-6" onSubmit={handleSubmit}>
-              <div className="">
-                <label
-                  className="mb-2 block text-sm font-medium"
-                  htmlFor="name"
-                >
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="Sobhan Asadi..."
-                  className="border-input bg-background focus:ring-primary w-full rounded-md border px-4 py-3 focus:ring-2 focus:outline-hidden"
-                />
-              </div>
+        {/* Main CTA */}
+        <div className="py-14 sm:py-16 lg:py-20">
+          <p className="mb-6 text-xs font-semibold tracking-[0.18em] text-white/45 uppercase">
+            Have a project or opportunity?
+          </p>
 
-              <div className="">
-                <label
-                  className="mb-2 block text-sm font-medium"
-                  htmlFor="email"
-                >
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="sobhanasadi703@gmail.com..."
-                  className="border-input bg-background focus:ring-primary w-full rounded-md border px-4 py-3 focus:ring-2 focus:outline-hidden"
-                />
-              </div>
+          <a href="mailto:sobhanasadi703@gmail.com" className="group block">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <h2 className="max-w-6xl text-[clamp(3.5rem,8.5vw,8.5rem)] leading-[0.82] font-semibold tracking-[-0.075em] text-white">
+                LET&apos;S BUILD
+                <span className="block text-white/35 transition-colors duration-500 group-hover:text-violet-400">
+                  SOMETHING.
+                </span>
+              </h2>
 
-              <div className="">
-                <label
-                  className="mb-2 block text-sm font-medium"
-                  htmlFor="name"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Hello, I,d to talk about..."
-                  className="border-input bg-background focus:ring-primary w-full resize-none rounded-md border px-4 py-3 focus:ring-2 focus:outline-hidden"
-                />
-              </div>
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] transition-all duration-500 group-hover:rotate-45 group-hover:border-violet-400/40 group-hover:bg-violet-400/10 sm:h-20 sm:w-20">
+                <ArrowUpRight size={26} className="text-violet-400" />
+              </span>
+            </div>
+          </a>
+        </div>
 
-              <button
-                type="submit"
-                className={cn(
-                  "cosmic-button flex w-full cursor-pointer items-center justify-center gap-2",
-                )}
+        {/* Contact links */}
+        <div className="grid border-y border-white/[0.08] sm:grid-cols-2 lg:grid-cols-4">
+          {contactLinks.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                target={
+                  item.label === "Telegram" || item.label === "GitHub"
+                    ? "_blank"
+                    : undefined
+                }
+                rel={
+                  item.label === "Telegram" || item.label === "GitHub"
+                    ? "noreferrer"
+                    : undefined
+                }
+                className={`group flex flex-col justify-between gap-8 py-6 transition-colors duration-300 hover:bg-white/[0.015] sm:px-6 lg:min-h-36 lg:px-7 lg:py-7 ${
+                  index !== contactLinks.length - 1
+                    ? "border-b border-white/[0.08] sm:border-b-0 lg:border-r"
+                    : ""
+                } ${
+                  index === 0 || index === 2
+                    ? "sm:border-r sm:border-white/[0.08]"
+                    : ""
+                }`}
               >
-                Send Message
-                <Send size={16} />
-              </button>
-            </form>
-          </div>
+                <div className="flex items-center justify-between">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.03] text-white/50 transition-all duration-300 group-hover:border-violet-400/30 group-hover:text-violet-400">
+                    <Icon size={17} />
+                  </span>
+
+                  <ArrowUpRight
+                    size={16}
+                    className="text-white/25 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-violet-400"
+                  />
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.16em] text-white/45 uppercase">
+                    {item.label}
+                  </p>
+
+                  <p className="mt-2 text-sm font-medium break-all text-white/80 sm:text-base">
+                    {item.value}
+                  </p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Bottom */}
+        <div className="flex flex-col gap-4 py-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs font-medium tracking-[0.12em] text-white/40 uppercase">
+            Sobhan Asadi · Front-End Developer
+          </p>
+
+          <a
+            href="#home"
+            className="group flex w-fit items-center gap-2 text-xs font-semibold tracking-[0.12em] text-white/45 uppercase transition-colors hover:text-white"
+          >
+            Back to top
+            <ArrowUpRight
+              size={14}
+              className="text-violet-400 transition-transform duration-300 group-hover:-translate-y-0.5"
+            />
+          </a>
         </div>
       </div>
     </section>

@@ -1,36 +1,22 @@
 import AboutMe from "../components/AboutMe";
 import ContactSection from "../components/ContactSection";
-import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import ProjectsSection from "../components/ProjectsSection";
 import SkillsSection from "../components/SkillsSection";
-import StarBackground from "../components/StarBackground";
-import ThemeToggl from "../components/ThemeToggl";
 
-function Home() {
+export default function Home() {
   return (
-    <div
-      id="home"
-      className="bg-background text-foreground min-h-screen overflow-x-hidden"
-    >
-      {/* Theme Toggl */}
-      <ThemeToggl />
-      {/* Background Effects */}
-      <StarBackground />
-      {/* Navbar */}
+    <div id="home" className="min-h-screen overflow-x-hidden">
       <Navbar />
-      {/* Main Content */}
+
       <main>
         <HeroSection />
+        <ProjectsSection />
         <AboutMe />
         <SkillsSection />
-        <ProjectsSection />
         <ContactSection />
       </main>
-      <Footer />
     </div>
   );
 }
-
-export default Home;

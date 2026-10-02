@@ -3,163 +3,119 @@
 @import "tailwindcss";
 
 @theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  /* Core colors */
+  --color-background: #05050b;
+  --color-foreground: #f5f3ff;
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary: #a78bfa;
+  --color-primary-foreground: #08080d;
 
-  --color-card: hsl(var(--card));
+  --color-border: rgba(255, 255, 255, 0.08);
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-subtle {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
+  /* Motion */
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.1s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.35s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.5s forwards;
 }
 
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes meteor {
-  0% {
-    transform: rotate(215deg) translateX(0);
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(215deg) translateX(-500px);
-    opacity: 0;
-  }
-}
-
 @layer base {
-  :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-
-    --card: 0 0% 100%;
-
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
-
-    --border: 214 32% 91%;
-  }
-
-  .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
-
-    --card: 222 47% 8%;
-
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
-
-    --border: 217 33% 20%;
-  }
-
   * {
-    @apply border-border;
+    box-sizing: border-box;
   }
 
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
+    background: #05050b;
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: #05050b;
+    color: #f5f3ff;
+
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-
-  @media (width >= 640px) {
-    max-width: 640px;
+  button,
+  a,
+  input,
+  textarea {
+    font: inherit;
   }
-  @media (width >= 768px) {
-    max-width: 768px;
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
-  @media (width >= 1024px) {
-    max-width: 1024px;
+
+  button {
+    border: 0;
   }
-  @media (width >= 1280px) {
-    max-width: 1280px;
+
+  img {
+    display: block;
+    max-width: 100%;
   }
-  @media (width >= 1400px) {
-    max-width: 1400px;
+
+  ::selection {
+    background: rgba(167, 139, 250, 0.25);
+    color: #ffffff;
   }
-}
 
-@utility text-glow {
-  @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
-}
-
-@utility text-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
-}
-
-@utility text-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
-}
-
-@utility cosmic-button {
-  @apply bg-primary text-primary-foreground rounded-full px-6 py-2 font-medium transition-all duration-300 hover:scale-105 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)] active:scale-95;
-}
-
-@utility star {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-}
-
-@utility meteor {
-  @apply absolute rounded-full bg-gradient-to-r from-white via-white to-transparent;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  :focus-visible {
+    outline: 2px solid rgba(167, 139, 250, 0.9);
+    outline-offset: 4px;
+  }
 }
 
 #root {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Respect operating-system accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
